@@ -43,8 +43,8 @@ wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64
     * [rpy2](https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz). If you have problems installing this module, it can be done like:
 
 
-```
+    ```
     pip install https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz
-```
+    ```
 
 
