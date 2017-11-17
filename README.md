@@ -30,7 +30,7 @@ wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64
 
 - [Python 2.7](https://www.python.org/download/releases/2.7/), with next python packages
 
-* numpy
++ numpy
 * argparse
 * timeit
 * os
