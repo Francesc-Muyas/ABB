@@ -28,7 +28,8 @@ Install shell script compiler. It can be downloaded and installed or you can jus
 wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
 ```
 
-[Python 2.7](https://www.python.org/download/releases/2.7/), with next python packages:
+[Python 2.7](https://www.python.org/download/releases/2.7/), with next python packages
+
 *numpy
 *argparse
 *timeit
@@ -40,6 +41,7 @@ wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64
 *multiprocessing
 *re
 *[rpy2](https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz). If you have problems installing this module, it can be done like:
+
 
 ```
 pip install https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz
