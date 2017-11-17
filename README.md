@@ -21,6 +21,7 @@ wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.ba
 chmod +x argparse.bash
 ```
 
+## Install dependencies 
 - [shc](https://github.com/neurobin/shc)
 Install shell script compiler. It can be downloaded and installed or you can just download a compiled binary package like next:
 
