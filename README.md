@@ -11,8 +11,8 @@ This tools is though to be run in DNA data, taking as input VCF files and other 
 ## Get ABB tool code 
 You will need to run `git clone  ` to get ABB tool. 
 
-Firstly, you will need to install some software:
-[argparse.bash](https://github.com/nhoffman/argparse-bash)
+Firstly, you will need to install some software
+- [argparse.bash](https://github.com/nhoffman/argparse-bash)
 
 ```
 cd ABB
@@ -21,14 +21,14 @@ wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.ba
 chmod +x argparse.bash
 ```
 
-[shc](https://github.com/neurobin/shc)
+- [shc](https://github.com/neurobin/shc)
 Install shell script compiler. It can be downloaded and installed or you can just download a compiled binary package like next:
 
 ```
 wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
 ```
 
-[Python 2.7](https://www.python.org/download/releases/2.7/), with next python packages
+- [Python 2.7](https://www.python.org/download/releases/2.7/), with next python packages
 
 * numpy
 * argparse
