@@ -8,8 +8,10 @@ This tool is able to detect false positive calls. It is based on a new strategy 
 This tools is though to be run in DNA data, taking as input VCF files and other parameters to remove variants prone to systematic errors (highly enriched with false positive calls). Statistical analysis and results are based on the paper : paper Muyas et al.
 
 
+
 ## Get ABB tool code 
 You will need to run `git clone  ` to get ABB tool. 
+
 
 ## Install dependencies
 Firstly, you will need to install some software
@@ -29,8 +31,7 @@ Install shell script compiler. It can be downloaded and installed or you can jus
 wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
 ```
 
-- [Python 2.7](https://www.python.org/download/releases/2.7/), with next python packages
-
+- [Python 2.7](https://www.python.org/download/releases/2.7/), with next python modules:
     * numpy
     * argparse
     * timeit
@@ -48,4 +49,18 @@ wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64
     pip install https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz
     ```
 
+- R version 3.3.2, with next packages and respective dependencies:   
+    * data.table
+    * ggplot2
+    * splines
+    * gamlss.data
+    * gamlss.dist
+    * gamlss
+    * grid
+    * gridExtra
+    * argparse
+    * tools
 
+
+## Install/prepare the tool
+This tool is based on shell, python and R scripts
