@@ -15,21 +15,6 @@ You will need to run `git clone  ` to get ABB tool.
 
 ## Install dependencies
 Firstly, you will need to install some software
-- [argparse.bash](https://github.com/nhoffman/argparse-bash)
-
-```
-cd ABB
-cd source
-wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
-chmod +x argparse.bash
-```
-
-- [shc](https://github.com/neurobin/shc)
-Install shell script compiler. It can be downloaded and installed or you can just download a compiled binary package like next:
-
-```
-wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
-```
 
 - [Python 2.7](https://www.python.org/download/releases/2.7/), with next python modules:
     * numpy
@@ -61,6 +46,32 @@ wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64
     * argparse
     * tools
 
+- [argparse.bash](https://github.com/nhoffman/argparse-bash)
+
+```
+cd ABB/source
+wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
+chmod +x argparse.bash
+```
+
+- [shc](https://github.com/neurobin/shc)
+Install shell script compiler. It can be downloaded and installed or you can just download a compiled binary package like next:
+
+```
+wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
+```
 
 ## Install/prepare the tool
-This tool is based on shell, python and R scripts
+This tool is based on shell, python and R scripts. Once all dependencies are installed, the tool can easily be set up with next command:
+```
+cd ABB
+bash set_up.sh -t PATH/TO/ABB -r PATH/TO/Rscript -p PATH/TO/python -a PATH/TO/argparse.bash
+```
+
+On the other hand, if you want to use it as a binary executable, you only need shc, previously downloaded, and run next command:
+```
+cd ABB
+mkdir -p ABB/bin
+PATH/TO/shc transform ABB_tool to binary
+```
+
