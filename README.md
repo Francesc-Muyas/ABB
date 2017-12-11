@@ -29,7 +29,6 @@ Firstly, you will need to install some software
     * re
     * [rpy2](https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz). If you have problems installing this module, it can be done like:
 
-
     ```
     pip install https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz
     ```
@@ -49,29 +48,38 @@ Firstly, you will need to install some software
 - [argparse.bash](https://github.com/nhoffman/argparse-bash)
 
 ```
-cd ABB/source
+cd PATH/TO/ABB/source
 wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
 chmod +x argparse.bash
+```
+
+- Download ABB list already obtained for the human exome (Hg19):
+
+```
+cd PATH/TO/ABB/source
+wget html/to/ABB_score.txt
 ```
 
 - [shc](https://github.com/neurobin/shc)
 Install shell script compiler. It can be downloaded and installed or you can just download a compiled binary package like next:
 
 ```
+cd PATH/TO/ABB/source
 wget https://github.com/neurobin/shc/releases/download/3.9.6/shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
+tar -xzf shc-3.9.6-bin-amd64-i386-arm64-armhf-ppc64el.tar.gz
 ```
 
 ## Install/prepare the tool
 This tool is based on shell, python and R scripts. Once all dependencies are installed, the tool can easily be set up with next command:
 ```
-cd ABB
+cd PATH/TO/ABB
 bash set_up.sh -t PATH/TO/ABB -r PATH/TO/Rscript -p PATH/TO/python -a PATH/TO/argparse.bash
 ```
 
 On the other hand, if you want to use it as a binary executable, you only need shc, previously downloaded, and run next command:
 ```
-cd ABB
-mkdir -p ABB/bin
-PATH/TO/shc transform ABB_tool to binary
+cd PATH/TO/ABB
+mkdir -p bin
+PATH/TO/shc -f shell/ABB_tool.sh -o bin/ABB
 ```
 
