@@ -57,7 +57,7 @@ chmod +x argparse.bash
 
 ```
 cd PATH/TO/ABB/source
-wget html/to/ABB_score.txt
+wget https://public_docs.crg.es/sossowski/publication_data/ABB/ABB_SCORE.txt
 ```
 
 - [shc](https://github.com/neurobin/shc)
