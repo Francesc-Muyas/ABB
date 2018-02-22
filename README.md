@@ -1,4 +1,4 @@
-# ABB tool, 
+# ABB tool
 This tool is able to detect false positive calls. It is based on a new strategy to identify systematic sequencing or alignment errors leading to false positive variant calls based on the recurrence of the allele balance bias (paper in preparation). The main applications of this tool are four:
 * 'ABB_list' obtains a new callability score list based on a new subset of samples. This list label positions of the genome with values between 0 and 1, which represent the precision of being a systematic error.
 * 'ABB_annotation' Annotates and filters variant from input vcfs with an existing or new ABB list under a specific threshold of ABB.
@@ -125,6 +125,7 @@ optional arguments:
 ```
 
 * ABB_list
+
 It obtains a new callability score list based on a new subset of samples. This list labels positions of the genome with values between 0 and 1, which represent the precision of being a systematic error. The input vcf must be a multi-sample calling vcf.
 The output of this script can be used as ABB_FILE for other applications like ABB_annotation or ABB_association. To have reliable ABB values (able to detect recurrent biased allele balance positions) we recommend at least 80 samples in the multi-sample vcf file.
 
@@ -136,6 +137,7 @@ bin/ABB -T ABB_list \
 ```
 
 * ABB_filter
+
 It obtains ABB from VCF on-fly and filter variants based on a specific ABB threshold. The input VCF must be a multi-sample calling vcf. It computes ABB_score on-fly and flags each variant site as ABB_biased if the obtained ABB score is greater than the threshold specified in –abb_filter. By default, this value is 0.7, representing low confidence sites. If you want to be stricter you can use any –abb_filter > 0.7 and < 1. For example, you can use -abb_filter 0.9 as hard filter, as it is used to flag very low confidence sites in the paper. You will find the flag ABB_biased in the FILTER column of the output vcf file. To have reliable ABB values (able to detect recurrent biased allele balance positions) we recommend at least 80 samples in the multi-sample vcf file.
 
 ```
@@ -147,6 +149,7 @@ bin/ABB -T ABB_filter \
 ```
 
 * ABB_annotation
+
 It annotates and filters variant from input VCFs with an existing or new ABB list under a specific threshold of ABB. Be sure that the reference genome version used for creating the ABB list is the same as the one used for the variant calling (VCF). 
 This script flags each variant site as ABB_biased if the obtained ABB score from the list is greater than the threshold specified in –abb_filter. By default, this value is 0.7, representing low confidence sites. If you want to be stricter you can use whatever –abb_filter greater than 0.7. You will find the flag ABB_biased in the FILTER column of the output VCF file. In this application, the input VCF file is not needed to be multi-sample calling VCF file, it also works with a single-sample VCF file.
 By default, this script uses the ABB list previously downloaded in source/ABB_SCORE.txt, however, you can use the output of the ABB_list script.
@@ -160,6 +163,7 @@ bin/ABB -T ABB_annotation \
 ```
 
 * ABB_association
+
 It detects genes/regions and variants which ABB could explain the significant association found in case-control studies. Using this command line, you can run this application:
 
 ```
@@ -172,7 +176,7 @@ bin/ABB -T ABB_association \
     -abb_file source/ABB_SCORE.txt
 ```
 
-The input VCF file must be a multi-sample calling VCF file with the variants that previously you found associated in a Rare Variant Assocition Study (RVAS) test. Additionally, two files specifying the cases (-cases) or controls (-controls) ids are needed. These files must be one column with the same ids as the ones found in the vcf:
+The input VCF file must be a multi-sample calling VCF file with the variants that previously you found associated in a Rare Variant Assocition Study (RVAS) test. Additionally, two files specifying the cases (`-cases `) or controls (`-controls `) ids are needed. These files must be one column with the same ids as the ones found in the vcf:
 - Cases.txt
 ```
 Case1_id
@@ -200,6 +204,7 @@ On the other hand, you need an easy annotation file for each variant where you s
 As previous applications, by default, the ABB list is source/ABB_SCORE.txt, but any (with same reference genome) ABB list obtained from ABB_list application can be used. 
 
 ABB_ASSOCIATION output:
+
 The output of this command return 4 different txt files (2 for SNVs and the other 2 for Genes) with p-values (multiple test corrected) showing the significance if that association is product or not of allele balance bias (described in main paper). 2 files represent significant SNVs/Genes and the other all SNVs/Genes with all p-values (FDR). Additionally, for each significant SNP and gene, you will find plots showing the proportion of variants not called by the variant caller, but showing significant amount of non-reference counts (MISSED) and the ones called by the variant caller (CALLED). 
 
 - SNP (ABB_ASSOCIATION.SNPs.txt and ABB_ASSOCIATION.SNPs.significant.txt) columns:
