@@ -211,6 +211,7 @@ The output of this command return 4 different txt files (2 for SNVs and the othe
 
 
 SNP (ABB_ASSOCIATION.SNPs.txt and ABB_ASSOCIATION.SNPs.significant.txt) columns:
+
     * CHROM: Chromosome of the variant.
     * POS: Variant site coordinate.
     * ABB: ABB score for the variant site
@@ -219,6 +220,7 @@ SNP (ABB_ASSOCIATION.SNPs.txt and ABB_ASSOCIATION.SNPs.significant.txt) columns:
 
 
 GENE (ABB_ASSOCIATION.GENEs.significant.txt  and ABB_ASSOCIATION.GENEs.significant.txt) columns:
+
     * GENE: Tested gene.
     * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
     * Association_regenotyped(FDR): FDR value obtained from association chi square test between cases and control including re-genotyped variants (including the MISSED calls).
