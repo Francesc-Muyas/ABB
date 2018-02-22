@@ -350,8 +350,15 @@ genes_SIG <- genes[genes$P_VAL1_adj < 0.1 | (genes$P_VALn_adj < 0.1 & (genes$P_V
 genes <- genes[,c("GENE","P_VAL1_adj","P_VAL2_adj","P_VAL3_adj")]
 genes_SIG <- genes_SIG[,c("GENE","P_VAL1_adj","P_VAL2_adj","P_VAL3_adj")]
 
+colnames(genes) <- c("GENE","Missed-Called_ratio(FDR)","Association_regenotyped(FDR)","Association_ABB(FDR)")
+colnames(genes_SIG) <- c("GENE","Missed-Called_ratio(FDR)","Association_regenotyped(FDR)","Association_ABB(FDR)")
+
+
 POSITIONS <- POSITIONS[,c("CHROM","POS","ABB","P_VAL1_adj","GENE")]
 POSITIONS_SIG <- POSITIONS_SIG[,c("CHROM","POS","ABB","P_VAL1_adj","GENE")]
+
+colnames(POSITIONS) <- c("CHROM","POS","ABB","Missed-Called_ratio(FDR)","GENE")
+colnames(POSITIONS_SIG) <- c("CHROM","POS","ABB","Missed-Called_ratio(FDR)","GENE")
 
 #######################
 # WRITING RESULTS
