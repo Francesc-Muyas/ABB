@@ -177,6 +177,7 @@ bin/ABB -T ABB_association \
 ```
 
 The input VCF file must be a multi-sample calling VCF file with the variants that previously you found associated in a Rare Variant Assocition Study (RVAS) test. Additionally, two files specifying the cases (`-cases `) or controls (`-controls `) ids are needed. These files must be one column with the same ids as the ones found in the vcf:
+
 Cases.txt:
 ```
 Case1_id
@@ -194,6 +195,7 @@ Control3_id
 ```
 
 On the other hand, you need an easy annotation file for each variant where you specify the gene/region which the variant belongs (`-genes `). It is not necessary to be gene annotation, you can use whatever annotation you used for the association test. This tabulated file should look like this (Chrom, Positions, Gene):
+
 Genes.txt:
 ```
 1	114524278	OLFML3
@@ -207,15 +209,17 @@ ABB_ASSOCIATION output:
 
 The output of this command return 4 different txt files (2 for SNVs and the other 2 for Genes) with p-values (multiple test corrected) showing the significance if that association is product or not of allele balance bias (described in main paper). 2 files represent significant SNVs/Genes and the other all SNVs/Genes with all p-values (FDR). Additionally, for each significant SNP and gene, you will find plots showing the proportion of variants not called by the variant caller, but showing significant amount of non-reference counts (MISSED) and the ones called by the variant caller (CALLED). 
 
-    SNP (ABB_ASSOCIATION.SNPs.txt and ABB_ASSOCIATION.SNPs.significant.txt) columns:
-        * CHROM: Chromosome of the variant.
-        * POS: Variant site coordinate.
-        * ABB: ABB score for the variant site
-        * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
-        * GENE: Annotation (for ejample gene) of the variant.
 
-    GENE (ABB_ASSOCIATION.GENEs.significant.txt  and ABB_ASSOCIATION.GENEs.significant.txt) columns:
-        * GENE: Tested gene.
-        * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
-        * Association_regenotyped(FDR): FDR value obtained from association chi square test between cases and control including re-genotyped variants (including the MISSED calls).
-        * Association_ABB(FDR): FDR value obtained from association chi square test between cases and control including but removing significantly biased sites (significant sites in ABB_ASSOCIATION.SNPs.significant.txt).
+SNP (ABB_ASSOCIATION.SNPs.txt and ABB_ASSOCIATION.SNPs.significant.txt) columns:
+    * CHROM: Chromosome of the variant.
+    * POS: Variant site coordinate.
+    * ABB: ABB score for the variant site
+    * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
+    * GENE: Annotation (for ejample gene) of the variant.
+
+
+GENE (ABB_ASSOCIATION.GENEs.significant.txt  and ABB_ASSOCIATION.GENEs.significant.txt) columns:
+    * GENE: Tested gene.
+    * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
+    * Association_regenotyped(FDR): FDR value obtained from association chi square test between cases and control including re-genotyped variants (including the MISSED calls).
+    * Association_ABB(FDR): FDR value obtained from association chi square test between cases and control including but removing significantly biased sites (significant sites in ABB_ASSOCIATION.SNPs.significant.txt).
