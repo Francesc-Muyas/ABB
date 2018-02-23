@@ -79,7 +79,7 @@ cd PATH/TO/ABB
 bash set_up.sh -t PATH/TO/ABB -r PATH/TO/Rscript -p PATH/TO/python -a PATH/TO/argparse.bash
 ```
 
-On the other hand, if you want to use it as a binary executable, you only need shc, previously downloaded, and run next command:
+The main executable is found in a shell script `shell/ABB_tool.sh `, but if you want to use it as a binary executable, you only need shc, previously downloaded, and run next command:
 ```
 cd PATH/TO/ABB
 mkdir -p bin
@@ -87,7 +87,7 @@ PATH/TO/shc -f shell/ABB_tool.sh -o bin/ABB
 ```
 
 ## Usage
-VCF files must by in VCF [v4.1](http://www.internationalgenome.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41) format. Additionally, for ABB_list, ABB_filter and ABB_association functions, vcf files must have the [Allelic Depth (AD) and Genotype (GT)](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it) for each sample, needed to compute the allele balance and get the ABB score on-fly. The tool, as explained above has 4 main applications.
+VCF files must be in VCF [v4.1](http://www.internationalgenome.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41) format. Additionally, for ABB_list, ABB_filter and ABB_association functions, vcf files must have the [Allelic Depth (AD) and Genotype (GT)](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it) for each sample, needed to compute the allele balance and get the ABB score on-fly. The tool, as explained above has 4 main applications.
 
 You can see all arguments just running: `bin/ABB –h `(values between [] represent default parameters).
 
@@ -126,7 +126,7 @@ optional arguments:
 
 * ABB_list
 
-It obtains a new callability score list based on a new subset of samples. This list labels positions of the genome with values between 0 and 1, which represent the precision of being a systematic error. The input vcf must be a multi-sample calling vcf.
+It obtains a new callability score list based on a new subset of samples. This list labels positions of the genome with values between 0 and 1, which represent the precision of being a systematic error (the greater ABB score, the more probable to be a systematic error). The input vcf must be a multi-sample calling vcf.
 The output of this script can be used as ABB_FILE for other applications like ABB_annotation or ABB_association. To have reliable ABB values (able to detect recurrent biased allele balance positions) we recommend at least 80 samples in the multi-sample vcf file.
 
 ```
@@ -216,7 +216,7 @@ SNP (ABB_ASSOCIATION.SNPs.txt and ABB_ASSOCIATION.SNPs.significant.txt) columns:
     * POS: Variant site coordinate.
     * ABB: ABB score for the variant site
     * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
-    * GENE: Annotation (for ejample gene) of the variant.
+    * GENE: Annotation (for example gene) of the variant.
 
 
 GENE (ABB_ASSOCIATION.GENEs.significant.txt  and ABB_ASSOCIATION.GENEs.significant.txt) columns:
