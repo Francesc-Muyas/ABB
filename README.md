@@ -87,9 +87,9 @@ PATH/TO/shc -f shell/ABB_tool.sh -o bin/ABB
 ```
 
 ## Usage
-VCF files must be in VCF [v4.1](http://www.internationalgenome.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41) format. Additionally, for ABB_list, ABB_filter and ABB_association functions, vcf files must have the [Allelic Depth (AD) and Genotype (GT)](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it) for each sample, needed to compute the allele balance and get the ABB score on-fly. The tool, as explained above has 4 main applications.
+VCF files must be in VCF [v4.1](http://www.internationalgenome.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41) format. Additionally, for ABB_list, ABB_filter and ABB_association functions, vcf files must have the [Allelic Depth (AD) and Genotype (GT)](https://gatkforums.broadinstitute.org/gatk/discussion/1268/what-is-a-vcf-and-how-should-i-interpret-it) for each sample, needed to compute the allele balance and get the ABB score on-fly.
 
-You can see all arguments just running: `bin/ABB –h `(values between [] represent default parameters).
+The tool, as explained above has 4 main applications. You can see all arguments just running: `bin/ABB –h `(values between [] represent default parameters).
 
 ```
 usage: ABB [-h] -T {ABB_filter,ABB_list,ABB_association,ABB_annotation} -i
