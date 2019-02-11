@@ -30,11 +30,7 @@ Firstly, you will need to install some software
     * biopython
     * multiprocessing
     * re
-    * [rpy2](https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz). If you have problems installing this module, it can be done like:
-
-    ```
-    pip install https://pypi.python.org/packages/3d/9b/b76b3665936204e14174dcac4814d8c91c833e9c3164664d5e89d777dac5/rpy2-2.7.0.tar.gz
-    ```
+    * scipy
 
 - R version 3.3.2, with next packages and respective dependencies:   
     * data.table
@@ -224,4 +220,4 @@ GENE (ABB_ASSOCIATION.GENEs.significant.txt  and ABB_ASSOCIATION.GENEs.significa
     * GENE: Tested gene.
     * Missed-Called_ratio(FDR): FDR obtained from the missed-called ratio comparison between cases and controls (Fisher test). If significant, it means that this ratio is different beween cases and controls.
     * Association_regenotyped(FDR): FDR value obtained from association chi square test between cases and control including re-genotyped variants (including the MISSED calls).
-    * Association_ABB(FDR): FDR value obtained from association chi square test between cases and control including but removing significantly biased sites (significant sites in ABB_ASSOCIATION.SNPs.significant.txt).
+    * Association_ABB(FDR): FDR value obtained from association chi square test between cases and control but removing significantly biased sites (significant sites in ABB_ASSOCIATION.SNPs.significant.txt).

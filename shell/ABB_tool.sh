@@ -9,7 +9,7 @@ echo '# ABB tool'
 echo '#################################'
 echo
 
-PYTHON=/software/so/el7.2/Python-2.7.13/bin/bin/python
+PYTHON=PATH/TO/python
 #'''
 ## Checking python 
 #if ls $PYTHON 1> /dev/null 2>&1; then
@@ -24,7 +24,7 @@ PYTHON=/software/so/el7.2/Python-2.7.13/bin/bin/python
 #'''
 
 # Absolute path to ABB tool
-ABB_PATH=/users/so/fmuyas/programs/ABB/
+ABB_PATH=PATH/TO/ABB
 SCRIPT=$(readlink -f $ABB_PATH)
 ## Checking python 
 if ls $SCRIPT 1> /dev/null 2>&1; then
@@ -38,7 +38,7 @@ fi
 ####https://github.com/nhoffman/argparse-bash
 ##wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
 ##chmod +x argparse.bash
-ARGPARSE="`dirname $0`"/../source/argparse.bash
+ARGPARSE=PATH/TO/argparse.bash
 if ls $ARGPARSE 1> /dev/null 2>&1; then
     echo "Argparser exists"
     source $ARGPARSE || exit 1
@@ -81,9 +81,6 @@ echo ABB score filter: "$ABB_FILTER"
 echo ABB tool path: "$ABB_PATH"
 echo Python used: $(which $PYTHON)
 echo
-
-#parser.add_argument('-path', '--abb_path', required=True, help='Path to ABB tool')
-
 
 #### Getting paths
 # Path to python scripts

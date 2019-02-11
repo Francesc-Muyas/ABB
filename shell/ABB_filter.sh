@@ -15,10 +15,10 @@ echo
 
 
 ####https://github.com/nhoffman/argparse-bash
-wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
-chmod +x argparse.bash
+#wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
+#chmod +x argparse.bash
 #ARGPARSE="`dirname $0`"/../source/argparse.bash
-ARGPARSE=argparse.bash
+ARGPARSE=PATH/TO/argparse.bash
 source $ARGPARSE || exit 1
 argparse "$@" <<EOF || exit 1
 parser.add_argument('-i','--input_vcf', required=True, help='VCF.gz file to be analyzed (AD is required in the column format)')

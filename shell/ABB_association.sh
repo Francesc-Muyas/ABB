@@ -5,9 +5,9 @@
 #################################
 
 # Python path
-PYTHON=/software/so/el7.2/Python-2.7.13/bin/bin/python
+PYTHON=PATH/TO/python
 # R path
-RSCRIPT=/usr/bin/Rscript
+RSCRIPT=PATH/TO/Rscript
 # Absolute path to this script
 SCRIPT=$(readlink -f "$0")
 # Absolute path 
@@ -20,7 +20,7 @@ R_SCRIPTS="`dirname $0`"/../rscripts
 ####https://github.com/nhoffman/argparse-bash
 ##wget https://raw.githubusercontent.com/nhoffman/argparse-bash/master/argparse.bash
 ##chmod +x argparse.bash
-ARGPARSE="`dirname $0`"/../source/argparse.bash
+ARGPARSE=PATH/TO/argparse.bash
 source $ARGPARSE || exit 1
 argparse "$@" <<EOF || exit 1
 parser.add_argument('-i','--input_file', required=True, help='VCF file to be analyzed (AD is required in the column format)')
